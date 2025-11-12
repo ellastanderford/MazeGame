@@ -1,0 +1,76 @@
+		<div id="page">
+			<h1>Final project</h1>
+			<p>
+				Reminder: you <strong>must</strong> cite any source code that you didn't write yourself (see <a target="_" href="http://euclid.nmu.edu/~mkowalcz/cs120/Example.java">example</a>).
+			</p>
+
+			<h2>Summary</h2>
+<!--			<p>For this assignment, you have a choice: you can either propose and implement your own idea for a final project or you can do the generic &quot;Pop the Balloons&quot; one outlined below.</p>
+
+			<h2>Option 1: Custom final project</h2> -->
+			<p>
+				The basic criteria are: your project must have at least one class of your own creation (aside from the main class), the user must have some way of interacting with objects of that class, and it must use an array.  Talk to me in person to get approval for your project idea.  <!--The deadline for getting approval is one week prior to our last scheduled class day of the semester - no exceptions (otherwise go with &quot;Option 2&quot; below).-->  Here are some <a target="_" href="http://euclid.nmu.edu/~mkowalcz/cs120/fin1/">projects from a previous semester</a> if you want ideas.
+			</p>
+			<p>
+				There is no limit to what you can do.  Bonus points are available for features beyond the basic requirements.
+			</p>
+<!--
+			<h2>Option 2: Pop the Balloons</h2>
+			<p>If you never got approval for a final project or if you don't have any ideas, do this one.  Proceed as follows:</p>
+
+			<ul>
+				<li>Create a JavaFX application</li>
+				<li>Create a Balloon class (it serves a similar purpose as the Bug class from labs 17-19).</li>
+				<li>In your main JavaFX application, set up an array of Balloon objects - something like this:</li>
+			</ul>
+<pre><code>		Balloon[] balloons = new Balloon[10];
+		for(int i = 0; i < balloons.length; i++) {
+			balloons[i] = new Balloon();
+			balloons[i].setTranslateX(i * 50);
+			root.getChildren().add(balloons[i]);
+		}</code></pre>
+			<ul>
+				<li>Use animation to make the balloons float up the screen on their own (you will need to drop in a copy of Animator.java from Lab 19 before you can call <code>Animator.start(...);</code>).  In your animation method, loop through the balloons array, telling each one to move up just a little bit.  Don't write an extra loop that waits until they &quot;get to the top&quot;, because your animation method will already be called 60 times per second; only a small movement is needed for each call to the method.</li>
+				<li>Attach a mouse listener to each Balloon object, so that when a balloon is clicked, it is sent down just below the bottom of the screen, to a random x coordinate.  This will make it look like the balloon was popped, but a new one comes out to replace it.</li>
+			</ul>
+			<p>
+				Features beyond these basics earn bonus points.
+			</p>
+
+			<h3>Question and answer</h3> -->
+<!--			<h3>I tried checking for bugs going off the sides the same way as the ghosts in lecture, but it doesn't work - why?</h3>
+
+			<p>The scenario there was a little different, because the ghosts only had two predictable directions of travel.  Here, the bugs are moving randomly.  Nevertheless, we can adapt that same strategy: If the bug goes out of bounds then we set its location to be just back in bounds and change its velocity (Either setting it to zero or reversing it).  Something like this:</p>
+<pre><code>if (xPos &lt; 0) {
+	xPos = 0;
+	xVel = 0; // or xVel = -xVel;
+}</code></pre>
+			<p>...but don't forget to call setTranslateX afterwords.</p>
+-->
+<!--
+			<h4>Where do I add the mouse handler that &quot;pops&quot; the balloons?</h4>
+
+			<p>One option would be to add something like <code>balloons[i].setOnMousePressed(balloons[i]::pop);</code> near the bottom of your loop that initializes the balloons.  Another alternative is to do a call to <code>this.setOnMousePressed(this::pop);</code> right from the Balloon constructor.  Either way, it is most natural to have some <code>pop(MouseEvent e)</code> method in the Balloon class that handles the re-positioning of the balloon.</p>
+-->
+<!--
+			<p>Yet another option would be to have a single mouse handler in main that loops through all of the balloons and checks to see which one (if any) were clicked on.  This would involve looping through each Balloon b and using a check like this: <code>if (b.getChildren().contains(event.getTarget()) ) {</code></p>
+
+			<h3>How do I make the bugs stop walking?</h3>
+
+			<p>Have some instance variable to keep track of whether or not the bug is alive.  So when the bug gets squashed, you change the value of that variable.  In the walk() method, make an if statement so that it will only move the bug if it is alive.</p>
+-->
+<!--
+			<h4>What would be the easiest way of tracking a score?</h4>
+
+			<p>Have a static variable in the Balloon class to keep track of it.  Since it is static, there is only one copy of the variable <em>shared</em> among all the Balloon objects, which is what you want.  In main, create a Text object <em>just once</em> when the application first begins, and call its <code>setText()</code> method from the animation method so it is constantly updated to the current value of your score variable.  Don't create a new Text element each time something changes because you will get a bunch of overlapping Text elements.</p>
+-->
+<!--			<p>
+				Group work is permitted, provided that 1) Every group member is fully responsible for some subset of the .java files - in terms of credit there is no &quot;shared&quot; responsibility for any .java file, 2) Each group member implements both an instantiable class and an array of objects as part of their contribution, and 3) the user can interact with these objects in some way (directly or indirectly).  When handing it in, you must make it clear which files you wrote.
+			</p> -->
+
+			<h2>Handing it in</h2>
+
+			<p>If you develop right in Codio, you should be all set.  If you are using an external editor, be sure to hand in anything required to compile and run your program (<strong>all</strong> .java files <strong>and</strong> any sound/image files).</p>
+
+
+		</div>

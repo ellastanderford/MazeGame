@@ -1,0 +1,15 @@
+{
+// Configure your Run and Preview buttons here.
+
+// Run button configuration
+  "commands": {
+        "Compile & Run": "javac --module-path /usr/lib/jvm/javafx-sdk-11.0.2/lib/ --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,javafx.swt {{filename}} && java -Dprism.order=sw --module-path /usr/lib/jvm/javafx-sdk-11.0.2/lib/ --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,javafx.swt {{filename_no_ext}}",
+        "Compile": "javac --module-path /usr/lib/jvm/javafx-sdk-11.0.2/lib/ --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,javafx.swt {{filename}}",
+        "Run": "java -Dprism.order=sw --module-path /usr/lib/jvm/javafx-sdk-11.0.2/lib/ --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web,javafx.swt  {{filename_no_ext}}"
+  },
+
+// Preview button configuration
+  "preview": {
+        "Viewer": "https://{{domain3000}}/"
+  }
+}
