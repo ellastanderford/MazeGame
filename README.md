@@ -8,3 +8,4 @@ At the end of the game, a score is displayed that is a mix of the user health le
 
 There are 5 main files. The main application game is Maze.java, where the JavaFX is launched from. Then there are four instantiable classes for different objects.
 These objects are Attackers, Navigator, Fireball, and Hedges.
+The sixth file attached is a helper file called Animator.java. This just functions as a simplifier when animating objects.
